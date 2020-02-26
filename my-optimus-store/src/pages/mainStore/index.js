@@ -13,9 +13,7 @@ const MainStore = () => {
         <div className='content'>
           <div className='box'>{item.value}</div>
           <div className='box'>
-            <button className='btn'>-</button>
-            {item.qtd}
-            <button className='btn'>+</button>
+            <button className='btn'>Comprar</button>
           </div>
         </div>
       </div>
@@ -27,7 +25,7 @@ const MainStore = () => {
       <Header text='Optimus Burguer'>
         <NavLink key='right' to='/cart'>
           <button className='btnExit' onClick={() => console.log('saiu')}>
-            child2
+            Carrinho
           </button>
         </NavLink>
       </Header>
@@ -39,11 +37,6 @@ const MainStore = () => {
             <div className='content'>Valor</div>
           </div>
           {renderList()}
-          <div className='li'>
-            <div className='lastChild'></div>
-            <div className='lastChild'>Total</div>
-            <div className='lastChild'>xx</div>
-          </div>
         </div>
       </div>
     </div>

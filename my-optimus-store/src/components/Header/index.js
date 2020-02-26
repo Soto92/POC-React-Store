@@ -6,7 +6,7 @@ const Header = props => {
     <header>
       <div className='part'>
       </div>
-      <div className='part'>{props.text}</div>
+      <div className='meio'>{props.text}</div>
       <div className='part'>
         {props.children}
       </div>
