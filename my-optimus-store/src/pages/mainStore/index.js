@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import './main.css';
 import Header from '../../components/Header';
 import { Burguers } from '../../mocks/burguer';
+import {ContextCart } from '../../context';
 
 const MainStore = () => {
+
+  const {itemsCart, setItemsCart} = useContext(ContextCart);
+
   const renderList = () => {
     return Burguers.map(item => (
       <div className='li' key={item.id}>
@@ -13,7 +17,7 @@ const MainStore = () => {
         <div className='content'>
           <div className='box'>{item.value}</div>
           <div className='box'>
-            <button className='btn'>Comprar</button>
+            <button onClick={() => setItemsCart(  [...itemsCart, item] )} className='btn'>Comprar</button>
           </div>
         </div>
       </div>
@@ -24,7 +28,7 @@ const MainStore = () => {
     <div className='container'>
       <Header text='Optimus Burguer'>
         <NavLink key='right' to='/cart'>
-          <button className='btnExit' onClick={() => console.log('saiu')}>
+          <button className='btnExit'>
             Carrinho
           </button>
         </NavLink>
